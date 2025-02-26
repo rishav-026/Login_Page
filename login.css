@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+h2{
+    background-color: #1DA1F2;
+    transform: rotate(360deg);
+    transition: transform 0.5s ease-in-out;
+}
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: aqua;
+    background: -webkit-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+    background-size: cover;
+    background-position: center;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    animation: bgAnimation 10s ease infinite;
+}
+
+@keyframes bgAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    position: relative;
+    width: 400px;
+    background:#F5E1F7;
+    padding: 60px 40px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.container:hover {
+    transform: scale(1.05);
+}
+
+header {
+    font-size: 40px;
+    margin-bottom: 60px;
+    font-family: 'Montserrat', sans-serif;
+    color: #333333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    animation: headerGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes headerGlow {
+    from { text-shadow: 0 0 10px #00dbde; }
+    to { text-shadow: 0 0 20px #fc00ff; }
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background: linear-gradient(to right, #00dbde, #fc00ff);
+    bottom: 0;
+    left: 0;
+    animation: move 5s infinite;
+}
+
+@keyframes move {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: -100%; }
+}
+
+.input-field,
+.button {
+    margin: 25px 0;
+    position: relative;
+    height: 50px;
+    width: 100%;
+}
+
+.input-field input {
+    height: 100%;
+    width: 100%;
+    border: 1px solid silver;
+    padding-left: 15px;
+    outline: none;
+    font-size: 19px;
+    transition: .4s;
+    border-radius: 25px;
+    background: #f1f1f1;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+    border: 1px solid #1DA1F2;
+    box-shadow: inset 0 0 10px rgba(29, 161, 242, 0.5);
+    background: #e0f7fa;
+}
+
+.input-field label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: grey;
+    font-size: 18px;
+    transition: .4s;
+    background: white;
+    padding: 0 5px;
+}
+
+input:focus~label,
+input:valid~label {
+    transform: translateY(-33px);
+    background: white;
+    font-size: 16px;
+    color: #1DA1F2;
+}
+
+.button {
+    margin-top: 30px;
+    overflow: hidden;
+    z-index: 111;
+}
+
+.button .inner {
+    position: absolute;
+    height: 100%;
+    width: 300%;
+    left: -100%;
+    z-index: -1;
+    transition: all .4s;
+    background: -webkit-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+    border-radius: 25px;
+}
+
+.button:hover .inner {
+    left: 0;
+}
+
+.button button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(to right, #00dbde, #fc00ff);
+    border-radius: 25px;
+    transition:background  0.3s ease-in-out;
+}
+
+.button button:hover {
+    background: linear-gradient(to right, #fc00ff, #00dbde);
+    color: #333;
+    transition: color 0.3s ease-in-out;
+}
+
+#signInBtn {
+    background-color: black;
+    color: aqua;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#signInBtn:hover {
+    background-color: #1DA1F2;
+    transform: rotate(360deg);
+    transition: transform 0.5s ease-in-out;
+}
+#completed-container {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
